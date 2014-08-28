@@ -109,12 +109,12 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
     self.audioPlayer.delegate = self;
     self.audioPlayer.volume = 3;
     [self.audioPlayer prepareToPlay];
-    //
+    //播放
     LWCircleProgressButton *btn = [LWCircleProgressButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(40, (frame.size.height-120)/2, 120, 120);
     btn.annular = YES;
 //    btn.progressTintColor = [UIColor blueColor];
-    [btn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03-10" ofType:@"png"]] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"暂停" ofType:@"png"]] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(voicePlayPress:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn];
     self.playBtn = btn;
@@ -123,10 +123,10 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
         [RecordManager defaultManager].delegate = self;
         LWCircleProgressButton *btn2 = [LWCircleProgressButton buttonWithType:UIButtonTypeCustom];
         btn2.frame = CGRectMake(180, (frame.size.height-120)/2, 120, 120);
-        [btn2 setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03-10" ofType:@"png"]] forState:UIControlStateNormal];
+        [btn2 setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"录音" ofType:@"png"]] forState:UIControlStateNormal];
         btn2.annular = YES;
-        [btn2 addTarget:self action:@selector(recordStart:) forControlEvents:UIControlEventTouchDown];
-//        [btn2 addTarget:self action:@selector(recordStop:) forControlEvents:UIControlEventTouchUpInside];
+//        [btn2 addTarget:self action:@selector(recordStart:) forControlEvents:UIControlEventTouchDown];
+        [btn2 addTarget:self action:@selector(recordStart:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn2];
         btn2.hidden = YES;
         self.recordBtn = btn2;
@@ -134,7 +134,7 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
         LWCircleProgressButton *btn4 = [LWCircleProgressButton buttonWithType:UIButtonTypeCustom];
         btn4.frame = CGRectMake(320, (frame.size.height-120)/2, 120, 120);
         btn4.annular = YES;
-        [btn4 setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03-10" ofType:@"png"]] forState:UIControlStateNormal];
+        [btn4 setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"播放录音" ofType:@"png"]] forState:UIControlStateNormal];
         [btn4 addTarget:self action:@selector(playRecordVoice:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn4];
         btn4.hidden = YES;
@@ -160,19 +160,19 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
 -(void)voicePlayPress:(UIButton *)btn
 {
     if (self.audioPlayer.isPlaying) {
-        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03" ofType:@"png"]] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"播放" ofType:@"png"]] forState:UIControlStateNormal];
         [self.audioPlayer pause];
     }else{
         [_recordPlayer stop];
         self.recordPlayer.currentTime = 0;
-        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03-10" ofType:@"png"]] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"暂停" ofType:@"png"]] forState:UIControlStateNormal];
         [self.audioPlayer play];
     }
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
-    [self.playBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03" ofType:@"png"]] forState:UIControlStateNormal];
+    [self.playBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"播放" ofType:@"png"]] forState:UIControlStateNormal];
     self.audioPlayer.currentTime = 0;
     self.recordBtn.hidden = NO;
 }
@@ -206,7 +206,7 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
         self.recordPlayBtn.userInteractionEnabled = NO;
         if (self.audioPlayer.isPlaying) {
             [self.audioPlayer stop];
-            [self.playBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03" ofType:@"png"]] forState:UIControlStateNormal];
+            [self.playBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"播放" ofType:@"png"]] forState:UIControlStateNormal];
             self.audioPlayer.currentTime = 0;
         }
         if (self.recordPlayer.isPlaying) {
@@ -216,6 +216,7 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
         if (!ExistFile(RECORD_PATH)) {
             CreatFile(RECORD_PATH)
         }
+        [self.recordBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"录音-停止" ofType:@"png"]] forState:UIControlStateNormal];
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
         [formatter setDateFormat:@"yyyyMMddHHmmss"];
         NSString *path = [NSString stringWithFormat:@"%@%@(1).caf",RECORD_PATH,[formatter stringFromDate:[NSDate date]]];
@@ -228,6 +229,7 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
             [[MyDataBase shareMyDataBase]saveSpliceVoice:self.voiceData];
             self.recordPlayBtn.hidden = NO;
         }
+        [self.recordBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"录音" ofType:@"png"]] forState:UIControlStateNormal];
         self.recordBtn.progress = 0;
         self.playBtn.userInteractionEnabled = YES;
         self.recordPlayBtn.userInteractionEnabled = YES;
@@ -261,7 +263,7 @@ typedef NS_ENUM(NSInteger, PageVoiceViewViewStyle) {
 {
     if (self.audioPlayer.isPlaying) {
         [self.audioPlayer stop];
-        [self.playBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"11首页_03" ofType:@"png"]] forState:UIControlStateNormal];
+        [self.playBtn setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"播放" ofType:@"png"]] forState:UIControlStateNormal];
         self.audioPlayer.currentTime = 0;
     }
     if (!self.recordPlayer.isPlaying) {

@@ -239,19 +239,6 @@
     NSString *jsonPath = [NSString stringWithFormat:@"%@/bookConfig.txt",self.bookPath];
     NSDictionary *bookJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonPath] options:NSJSONReadingAllowFragments error:nil];
     int pageCount = [[bookJson objectForKey:@"page"]integerValue];
-////    save.resize(pageCount);
-//    save.clear();
-//    for (int i = 0; i<pageCount; i++) {
-//        UIImage *yuanImage = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/page/%d.jpg",self.bookPath,i+1]];
-//        if (yuanImage) {
-//            cv::Mat met = [yuanImage getDetectorExtractor];
-//            save.push_back(met);
-////            save[i] = met;
-//        }else{
-//            NSLog(@"少图片 %d",i+1);
-//        }
-//        
-//    }
     
     NSString *xmlPath = [NSString stringWithFormat:@"%@/vocabulary.xml",self.bookPath];
     cv::FileStorage fs([xmlPath UTF8String], cv::FileStorage::READ);
@@ -275,6 +262,7 @@
 -(void)matchPicture:(UIImage *)matchImage
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+//        NSLog(@"%@--start",matchImage);
         int qualifiedDMatch = 0;
         NSInteger pagNum = 0;
         cv::Mat nowImage = [matchImage getDetectorExtractor];
@@ -306,6 +294,7 @@
             [self pushBookPageVC:pagNum];
         }
         self.pagNUM = pagNum;
+//        NSLog(@"%@--end",matchImage);
     });
 }
 
