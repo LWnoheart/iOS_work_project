@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "WelcomeView.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +19,10 @@
     UINavigationController *naVC = [[UINavigationController alloc]initWithRootViewController:[[RootViewController alloc]init]];
     self.window.rootViewController = naVC;
     [self.window makeKeyAndVisible];
+    if (![GetObject(@"firstLaunch") isEqualToString:@"OK"]) {
+        WelcomeView *welView = [[WelcomeView alloc]initWithFrame:self.window.bounds];
+        [self.window addSubview:welView];
+    }
     return YES;
 }
 

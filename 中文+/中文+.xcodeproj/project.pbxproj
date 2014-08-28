@@ -32,6 +32,20 @@
 		0C1BD04E199479520085E781 /* record_animate_13.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1BD040199479520085E781 /* record_animate_13.png */; };
 		0C1BD04F199479520085E781 /* record_animate_14.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1BD041199479520085E781 /* record_animate_14.png */; };
 		0C1BD0531994AF660085E781 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1BD0521994AF660085E781 /* libmp3lame.a */; };
+		0C1EDFB719AECA2D00898F76 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFB119AECA2D00898F76 /* bg.png */; };
+		0C1EDFB819AECA2D00898F76 /* btn-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFB219AECA2D00898F76 /* btn-focus.png */; };
+		0C1EDFB919AECA2D00898F76 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFB319AECA2D00898F76 /* btn.png */; };
+		0C1EDFBA19AECA2D00898F76 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFB419AECA2D00898F76 /* img1.png */; };
+		0C1EDFBB19AECA2D00898F76 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFB519AECA2D00898F76 /* img2.png */; };
+		0C1EDFBC19AECA2D00898F76 /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFB619AECA2D00898F76 /* img3.png */; };
+		0C1EDFC119AECA3B00898F76 /* WelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EDFBD19AECA3B00898F76 /* WelcomeView.m */; };
+		0C1EDFC219AECA3B00898F76 /* LWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EDFBE19AECA3B00898F76 /* LWPageControl.m */; };
+		0C1EDFD319AED26600898F76 /* ScanWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EDFD219AED26500898F76 /* ScanWelcomeView.m */; };
+		0C1EDFDA19AED4B700898F76 /* btnn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFD519AED4B700898F76 /* btnn1.png */; };
+		0C1EDFDB19AED4B700898F76 /* btnn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFD619AED4B700898F76 /* btnn2.png */; };
+		0C1EDFDC19AED4B700898F76 /* btnn3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFD719AED4B700898F76 /* btnn3.png */; };
+		0C1EDFDD19AED4B700898F76 /* h1004-bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFD819AED4B700898F76 /* h1004-bot.png */; };
+		0C1EDFDE19AED4B700898F76 /* h1004-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EDFD919AED4B700898F76 /* h1004-top.png */; };
 		0C2681A91990B0F100E26259 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2681A81990B0F100E26259 /* opencv2.framework */; };
 		0C2681AC1990B15800E26259 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C2681AB1990B15800E26259 /* UIImage+OpenCV.mm */; };
 		0C2681AF1990B73C00E26259 /* LWImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2681AD1990B73C00E26259 /* LWImageCapture.m */; };
@@ -209,6 +223,23 @@
 		0C1BD041199479520085E781 /* record_animate_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_animate_14.png; sourceTree = "<group>"; };
 		0C1BD0511994AF660085E781 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		0C1BD0521994AF660085E781 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		0C1EDFB119AECA2D00898F76 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		0C1EDFB219AECA2D00898F76 /* btn-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-focus.png"; sourceTree = "<group>"; };
+		0C1EDFB319AECA2D00898F76 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		0C1EDFB419AECA2D00898F76 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
+		0C1EDFB519AECA2D00898F76 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
+		0C1EDFB619AECA2D00898F76 /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
+		0C1EDFBD19AECA3B00898F76 /* WelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeView.m; sourceTree = "<group>"; };
+		0C1EDFBE19AECA3B00898F76 /* LWPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWPageControl.m; sourceTree = "<group>"; };
+		0C1EDFBF19AECA3B00898F76 /* WelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeView.h; sourceTree = "<group>"; };
+		0C1EDFC019AECA3B00898F76 /* LWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPageControl.h; sourceTree = "<group>"; };
+		0C1EDFD119AED26500898F76 /* ScanWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanWelcomeView.h; sourceTree = "<group>"; };
+		0C1EDFD219AED26500898F76 /* ScanWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanWelcomeView.m; sourceTree = "<group>"; };
+		0C1EDFD519AED4B700898F76 /* btnn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnn1.png; sourceTree = "<group>"; };
+		0C1EDFD619AED4B700898F76 /* btnn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnn2.png; sourceTree = "<group>"; };
+		0C1EDFD719AED4B700898F76 /* btnn3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnn3.png; sourceTree = "<group>"; };
+		0C1EDFD819AED4B700898F76 /* h1004-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h1004-bot.png"; sourceTree = "<group>"; };
+		0C1EDFD919AED4B700898F76 /* h1004-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h1004-top.png"; sourceTree = "<group>"; };
 		0C2681A81990B0F100E26259 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "中文+/thirdParty/opencv2.framework"; sourceTree = "<group>"; };
 		0C2681AA1990B15800E26259 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		0C2681AB1990B15800E26259 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
@@ -470,6 +501,31 @@
 			path = lame;
 			sourceTree = "<group>";
 		};
+		0C1EDFB019AECA2D00898F76 /* 欢迎页 */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EDFB119AECA2D00898F76 /* bg.png */,
+				0C1EDFB219AECA2D00898F76 /* btn-focus.png */,
+				0C1EDFB319AECA2D00898F76 /* btn.png */,
+				0C1EDFB419AECA2D00898F76 /* img1.png */,
+				0C1EDFB519AECA2D00898F76 /* img2.png */,
+				0C1EDFB619AECA2D00898F76 /* img3.png */,
+			);
+			path = "欢迎页";
+			sourceTree = "<group>";
+		};
+		0C1EDFD419AED4B700898F76 /* 扫描说明 */ = {
+			isa = PBXGroup;
+			children = (
+				0C1EDFD519AED4B700898F76 /* btnn1.png */,
+				0C1EDFD619AED4B700898F76 /* btnn2.png */,
+				0C1EDFD719AED4B700898F76 /* btnn3.png */,
+				0C1EDFD819AED4B700898F76 /* h1004-bot.png */,
+				0C1EDFD919AED4B700898F76 /* h1004-top.png */,
+			);
+			path = "扫描说明";
+			sourceTree = "<group>";
+		};
 		0C3BE68D19AD7E75003AC59E /* 媒体按钮 */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +580,8 @@
 		0C3D3B7D1966368200FB5EFA /* picture */ = {
 			isa = PBXGroup;
 			children = (
+				0C1EDFD419AED4B700898F76 /* 扫描说明 */,
+				0C1EDFB019AECA2D00898F76 /* 欢迎页 */,
 				0C3BE6B319AD8037003AC59E /* 声音记录 */,
 				0C3BE69A19AD7EAB003AC59E /* 首页 */,
 				0C3BE68D19AD7E75003AC59E /* 媒体按钮 */,
@@ -659,6 +717,12 @@
 		0C902E3B1960FDB8001FE65A /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				0C1EDFD119AED26500898F76 /* ScanWelcomeView.h */,
+				0C1EDFD219AED26500898F76 /* ScanWelcomeView.m */,
+				0C1EDFBF19AECA3B00898F76 /* WelcomeView.h */,
+				0C1EDFBD19AECA3B00898F76 /* WelcomeView.m */,
+				0C1EDFC019AECA3B00898F76 /* LWPageControl.h */,
+				0C1EDFBE19AECA3B00898F76 /* LWPageControl.m */,
 				0C14D6C419AB11B2001FC782 /* LWSelectTagView.h */,
 				0C14D6C519AB11B2001FC782 /* LWSelectTagView.m */,
 				0C14D6C219AAE843001FC782 /* LWCircleProgressButton.h */,
@@ -979,15 +1043,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C1BD04E199479520085E781 /* record_animate_13.png in Resources */,
+				0C1EDFDC19AED4B700898F76 /* btnn3.png in Resources */,
 				0C3BE6C719AD8037003AC59E /* playe.png in Resources */,
 				0C5BFE93199DB40E00137C17 /* header01.png in Resources */,
 				0C902E161960FC4D001FE65A /* InfoPlist.strings in Resources */,
 				0C1BD044199479520085E781 /* record_animate_03.png in Resources */,
+				0C1EDFBA19AECA2D00898F76 /* img1.png in Resources */,
 				0C3BE6B119AD7EAB003AC59E /* paipai.png in Resources */,
 				0C3BE6AD19AD7EAB003AC59E /* langdu.png in Resources */,
 				0C3BE6A819AD7EAB003AC59E /* aboutMeTD.png in Resources */,
 				0C1BD043199479520085E781 /* record_animate_02.png in Resources */,
 				0C9F2B02196E3E8700B33C2B /* back.png in Resources */,
+				0C1EDFBC19AECA2D00898F76 /* img3.png in Resources */,
 				0C1BD042199479520085E781 /* record_animate_01.png in Resources */,
 				0C9F2B20196E639600B33C2B /* 11首页_03-12.png in Resources */,
 				0C1BD049199479520085E781 /* record_animate_08.png in Resources */,
@@ -998,6 +1065,7 @@
 				0C3BE6C019AD8037003AC59E /* bookCaseDrawer.png in Resources */,
 				0CD3D5B01998AFF800F8184D /* blueLedBigOff.png in Resources */,
 				0CD3D5AF1998AFF800F8184D /* blueLedBig@2x.png in Resources */,
+				0C1EDFB719AECA2D00898F76 /* bg.png in Resources */,
 				0CD3D5B41998AFF800F8184D /* blueLedSmallOff@2x.png in Resources */,
 				0C1BD045199479520085E781 /* record_animate_04.png in Resources */,
 				0C9F2B24196E639600B33C2B /* kk_15.png in Resources */,
@@ -1008,9 +1076,12 @@
 				0C3BE6C919AD8037003AC59E /* smallBook.png in Resources */,
 				0C3BE6AA19AD7EAB003AC59E /* bookTD.png in Resources */,
 				0C3BE69619AD7E75003AC59E /* pagZS2.png in Resources */,
+				0C1EDFBB19AECA2D00898F76 /* img2.png in Resources */,
 				0CD3D5AE1998AFF800F8184D /* blueLedBig.png in Resources */,
+				0C1EDFB919AECA2D00898F76 /* btn.png in Resources */,
 				0C9F2B21196E639600B33C2B /* 11首页_03.png in Resources */,
 				0C1BD032199470070085E781 /* kkkl.png in Resources */,
+				0C1EDFDA19AED4B700898F76 /* btnn1.png in Resources */,
 				0C5BFE9C199DB4D800137C17 /* AboutViewController.xib in Resources */,
 				0C9F2B23196E639600B33C2B /* kk_06.png in Resources */,
 				0C3BE6C319AD8037003AC59E /* collectHead.png in Resources */,
@@ -1018,6 +1089,8 @@
 				0CD3D5B11998AFF800F8184D /* blueLedSmall.png in Resources */,
 				0C9F2B1F196E639600B33C2B /* 11首页_03-10.png in Resources */,
 				0C3D3B8E1966380A00FB5EFA /* BookCaseViewController.xib in Resources */,
+				0C1EDFDB19AED4B700898F76 /* btnn2.png in Resources */,
+				0C1EDFB819AECA2D00898F76 /* btn-focus.png in Resources */,
 				0C3BE69919AD7E75003AC59E /* pagZS5.png in Resources */,
 				0C14D6C919AB1298001FC782 /* 未选择.png in Resources */,
 				0C1BD048199479520085E781 /* record_animate_07.png in Resources */,
@@ -1036,6 +1109,7 @@
 				0CD3D5B21998AFF800F8184D /* blueLedSmall@2x.png in Resources */,
 				0C3D3B93196647D200FB5EFA /* RootViewController.xib in Resources */,
 				0C1BD04D199479520085E781 /* record_animate_12.png in Resources */,
+				0C1EDFDD19AED4B700898F76 /* h1004-bot.png in Resources */,
 				0C3BE6C119AD8037003AC59E /* bookCaseHead.png in Resources */,
 				0C14D6CA19AB1298001FC782 /* 选择标签.png in Resources */,
 				0C1BD04C199479520085E781 /* record_animate_11.png in Resources */,
@@ -1049,6 +1123,7 @@
 				0C3BE6C519AD8037003AC59E /* followSmallDrawer.png in Resources */,
 				0C1BD046199479520085E781 /* record_animate_05.png in Resources */,
 				0C1BD04A199479520085E781 /* record_animate_09.png in Resources */,
+				0C1EDFDE19AED4B700898F76 /* h1004-top.png in Resources */,
 				0CD3D5B61998AFF800F8184D /* SDGroupCell.xib in Resources */,
 				0C1BD04F199479520085E781 /* record_animate_14.png in Resources */,
 				0C3BE69719AD7E75003AC59E /* pagZS3.png in Resources */,
@@ -1072,6 +1147,7 @@
 			files = (
 				0C9F2B63196E6FDC00B33C2B /* NSObject+MyMethod.m in Sources */,
 				0C2681B21990CC1400E26259 /* ScanViewController.mm in Sources */,
+				0C1EDFD319AED26600898F76 /* ScanWelcomeView.m in Sources */,
 				0C94114A19628B870068B214 /* BookCaseBG.m in Sources */,
 				0C9F2B57196E6FDC00B33C2B /* ASIAuthenticationDialog.m in Sources */,
 				0C9F2BAF196E898900B33C2B /* zip.c in Sources */,
@@ -1110,6 +1186,7 @@
 				0C9F2B58196E6FDC00B33C2B /* ASIDataCompressor.m in Sources */,
 				0CD3D5AD1998AFF800F8184D /* SDSubCell.m in Sources */,
 				0C9F2B60196E6FDC00B33C2B /* MBProgressHUD.m in Sources */,
+				0C1EDFC119AECA3B00898F76 /* WelcomeView.m in Sources */,
 				0C9F2B94196E77B700B33C2B /* UIImage+MultiFormat.m in Sources */,
 				0C9F2B8F196E77B700B33C2B /* SDWebImageDownloaderOperation.m in Sources */,
 				0C902E461961683A001FE65A /* BookCell.m in Sources */,
@@ -1134,6 +1211,7 @@
 				0C902E181960FC4D001FE65A /* main.m in Sources */,
 				0C9364D819639476006FA088 /* BookPageImage.m in Sources */,
 				0C9F2B8B196E77B700B33C2B /* SDImageCache.m in Sources */,
+				0C1EDFC219AECA3B00898F76 /* LWPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

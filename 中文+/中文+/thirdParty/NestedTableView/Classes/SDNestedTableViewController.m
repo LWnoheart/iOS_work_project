@@ -155,14 +155,6 @@
     
     BOOL isExpanded = [[expandedIndexes objectForKey:[NSNumber numberWithInt:indexPath.row]] boolValue];
     cell.isExpanded = isExpanded;
-//    if(cell.isExpanded)
-//    {
-//        [cell rotateExpandBtnToExpanded];
-//    }
-//    else
-//    {
-//        [cell rotateExpandBtnToCollapsed];
-//    }
     
     [cell.subTable reloadData];
     
@@ -214,20 +206,6 @@
         return;
     SDGroupCell *cell = (SDGroupCell *)[tableView cellForRowAtIndexPath:indexPath];
     [self mainItemDidChange:cell forTap:YES];
-//
-//    if ([[expandedIndexes objectForKey:[NSNumber numberWithInt:indexPath.row]] boolValue]) {
-//        [self collapsingItem:(SDGroupCell *)[tableView cellForRowAtIndexPath:indexPath] withIndexPath:indexPath];
-//    } else {
-//        [self expandingItem:(SDGroupCell *)[tableView cellForRowAtIndexPath:indexPath] withIndexPath:indexPath];
-//    }
-//    
-//    // reset cell expanded state in array
-//	BOOL isExpanded = ![[expandedIndexes objectForKey:[NSNumber numberWithInt:indexPath.row]] boolValue];
-//	NSNumber *expandedIndex = [NSNumber numberWithBool:isExpanded];
-//	[expandedIndexes setObject:expandedIndex forKey:[NSNumber numberWithInt:indexPath.row]];
-//
-//    [self.mytableView beginUpdates];
-//    [self.mytableView endUpdates];
 }
 
 @end

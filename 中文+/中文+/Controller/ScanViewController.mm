@@ -8,6 +8,7 @@
 
 #import "ScanViewController.h"
 #import "LWSelectTagView.h"
+#import "ScanWelcomeView.h"
 #import "BookPageViewController.h"
 #import "LWImageCapture.h"
 #import "BookCell.h"
@@ -17,8 +18,9 @@
 #define QualifiedDistance 30
 #define QualifiedRatio 0.2f
 
-@interface ScanViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,LWImageCaptureDelegate>{
+@interface ScanViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,LWImageCaptureDelegate,ScanWelcomeViewDelegate>{
     __weak UICollectionView *myCollectView;
+    __weak ScanWelcomeView *_welcomeView;
     cv::vector<cv::Mat> save;
 }
 @property (nonatomic,strong)NSArray *bookArray;
@@ -77,9 +79,6 @@
             self.bookPath = path;
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
                 [self initOpenCV];
-                dispatch_async(dispatch_get_main_queue(), ^(){
-                    [self.lw_capture start];
-                });
             });
         }else{
             self.bookPath = nil;
@@ -89,18 +88,29 @@
         self.bookPath = nil;
     }
     [self.lw_capture.captureSession startRunning];
-    
-//    LWSelectTagView *select = [[LWSelectTagView alloc]initWithFrame:CGRectMake(0, 1000, 90, 15)];
-//    select.selectImage = [UIImage imageNamed:@"选择标签.png"];
-//    select.unSelectImage = [UIImage imageNamed:@"未选择.png"];
-//    select.text = @"不再提醒";
-//    select.textColor = [UIColor darkGrayColor];
-//    select.textfont = [UIFont systemFontOfSize:11];
-//    [self.view addSubview:select];
-    
+    if (![GetObject(@"firstScan") isEqualToString:@"OK"]){
+        ScanWelcomeView *welview = [[ScanWelcomeView alloc]initWithFrame:self.view.bounds];
+        welview.delegate = self;
+        [self.view addSubview:welview];
+        _welcomeView = welview;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    if (!_welcomeView) {
+        if (self.bookPath) {
+            [self.lw_capture.captureSession startRunning];
+            [self.lw_capture start];
+        }else{
+            [self selectBook:nil];
+        }
+        [self scanlineGo];
+    }
+}
+
+-(void)ScanWelcomeViewRemoveFromSuperview
 {
     if (self.bookPath) {
         [self.lw_capture.captureSession startRunning];
@@ -108,7 +118,6 @@
     }else{
         [self selectBook:nil];
     }
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self scanlineGo];
 }
 
