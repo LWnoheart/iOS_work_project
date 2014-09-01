@@ -55,7 +55,7 @@
         }
         NSString *jsonPath = [NSString stringWithFormat:@"%@/%ld/pageConfig.txt",rootPath,(long)index];
         self.pageJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonPath] options:NSJSONReadingAllowFragments error:nil];
-        NSLog(@"%@",self.pageJson);
+//        NSLog(@"%@",self.pageJson);
         //
         for (NSDictionary *rootDic in self.pageJson) {
             NSArray *btnArray = [rootDic objectForKey:@"icoList"];

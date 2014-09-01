@@ -301,6 +301,13 @@ typedef NS_ENUM(NSInteger, LWPullRefreshViewState) {
     self.mytableView.tableFooterView = footView;
     [self.view addSubview:self.mytableView];
     
+    if (!self.refreshHeaderView) {
+        LWPullRefreshView *refreshHeaderView = [[LWPullRefreshView alloc]initWithFrame:CGRectMake(0, -self.mytableView.frame.size.height, self.mytableView.frame.size.width, self.mytableView.frame.size.height) style:LWPullRefreshViewStylePullDown];
+        refreshHeaderView.delegate = self;
+        refreshHeaderView.offsetTemp = self.tableviewOffset;
+        [self.mytableView addSubview:refreshHeaderView];
+        self.refreshHeaderView = refreshHeaderView;
+    }
     
     [self.mytableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:self forKeyPath:@"tableviewOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -318,13 +325,6 @@ typedef NS_ENUM(NSInteger, LWPullRefreshViewState) {
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"contentSize"]) {
-        if (!self.refreshHeaderView) {
-            LWPullRefreshView *refreshHeaderView = [[LWPullRefreshView alloc]initWithFrame:CGRectMake(0, -self.mytableView.frame.size.height, self.mytableView.frame.size.width, self.mytableView.frame.size.height) style:LWPullRefreshViewStylePullDown];
-            refreshHeaderView.delegate = self;
-            refreshHeaderView.offsetTemp = self.tableviewOffset;
-            [self.mytableView addSubview:refreshHeaderView];
-            self.refreshHeaderView = refreshHeaderView;
-        }
         if (self.mytableView.frame.size.height-self.tableviewOffset<=self.mytableView.contentSize.height&&!self.refreshFooterView) {
             LWPullRefreshView *refreshFooterView = [[LWPullRefreshView alloc]initWithFrame:CGRectMake(0, self.mytableView.contentSize.height, self.mytableView.frame.size.width, self.mytableView.frame.size.height) style:LWPullRefreshViewStylePullUp];
             refreshFooterView.delegate = self;
@@ -340,9 +340,12 @@ typedef NS_ENUM(NSInteger, LWPullRefreshViewState) {
             }
         }
     }else if ([keyPath isEqualToString:@"tableviewOffset"]){
-        self.refreshHeaderView.frame = CGRectMake(0, -self.mytableView.frame.size.height-(self.tableviewOffset-64.f), self.mytableView.frame.size.width, self.mytableView.frame.size.height);
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
+            self.refreshHeaderView.frame = CGRectMake(0, -self.mytableView.frame.size.height-(self.tableviewOffset-64.f), self.mytableView.frame.size.width, self.mytableView.frame.size.height);
+        }else{
+            self.refreshHeaderView.frame = CGRectMake(0, -self.mytableView.frame.size.height-self.tableviewOffset, self.mytableView.frame.size.width, self.mytableView.frame.size.height);
+        }
     }
-    
 }
 
 

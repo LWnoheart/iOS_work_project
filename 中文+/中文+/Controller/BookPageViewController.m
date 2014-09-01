@@ -12,7 +12,7 @@
 
 
 @interface BookPageViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
-    BookPageImage *currentPage;
+    __weak BookPageImage *currentPage;
     __weak UICollectionView *myCollectView;
 
 }
@@ -53,9 +53,6 @@
     
     
     //
-    BookPageImage *image = [[BookPageImage alloc]initWithFrame:CGRectMake(0, NavigationVC_StartY, self.view.frame.size.width, self.view.frame.size.height-NavigationVC_StartY) rootPath:self.bookPath pageIndex:self.currentIndex];
-    [self.view addSubview:image];
-    currentPage = image;
     
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeAction:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -73,6 +70,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (!currentPage) {
+        BookPageImage *image = [[BookPageImage alloc]initWithFrame:CGRectMake(0, NavigationVC_StartY, self.view.frame.size.width, self.view.frame.size.height-NavigationVC_StartY) rootPath:self.bookPath pageIndex:self.currentIndex];
+        [self.view addSubview:image];
+        currentPage = image;
+    }
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -117,6 +119,7 @@
     image.layer.shadowOpacity = 0.6;
     image.layer.shadowOffset = shadowSize;
     [self.view addSubview:image];
+    
     [UIView animateWithDuration:0.3f animations:^(){
         CGRect frame = image.frame;
         frame.origin.x = 0;
