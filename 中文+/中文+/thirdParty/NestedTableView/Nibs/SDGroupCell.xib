@@ -29,6 +29,7 @@
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="31">
                         <rect key="frame" x="0.0" y="100" width="768" height="117"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="sectionIndexBackgroundColor" red="0.87058830261230469" green="0.69019609689712524" blue="0.33725491166114807" alpha="1" colorSpace="deviceRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="22" id="32"/>
                             <outlet property="delegate" destination="22" id="33"/>
@@ -79,7 +80,7 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.87058830259999997" green="0.69019609689999994" blue="0.33725491169999999" alpha="1" colorSpace="deviceRGB"/>
             <connections>
                 <outlet property="expandBtn" destination="45" id="46"/>
                 <outlet property="firstLabel" destination="PHx-4H-lJU" id="p3O-eZ-M3e"/>

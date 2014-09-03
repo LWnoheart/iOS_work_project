@@ -59,7 +59,7 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.87058830259999997" green="0.69019609689999994" blue="0.33725491169999999" alpha="1" colorSpace="deviceRGB"/>
             <connections>
                 <outlet property="firstLabel" destination="OWj-gJ-9e5" id="go3-pT-VZM"/>
                 <outlet property="itemText" destination="5" id="18"/>

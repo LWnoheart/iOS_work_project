@@ -167,7 +167,7 @@
     BOOL isExpanded = [[expandedIndexes objectForKey:[NSNumber numberWithInt:indexPath.row]] boolValue];
     if(isExpanded)
     {
-        return [SDGroupCell getHeight] + [SDGroupCell getsubCellHeight]*amt + 1;
+        return [SDGroupCell getHeight] + [SDGroupCell getsubCellHeight]*amt;
     }
     return [SDGroupCell getHeight];
 }

@@ -19,10 +19,12 @@
     UINavigationController *naVC = [[UINavigationController alloc]initWithRootViewController:[[RootViewController alloc]init]];
     self.window.rootViewController = naVC;
     [self.window makeKeyAndVisible];
-    if (![GetObject(@"firstLaunch") isEqualToString:@"OK"]) {
-        WelcomeView *welView = [[WelcomeView alloc]initWithFrame:self.window.bounds];
-        [self.window addSubview:welView];
-    }
+//    if (![GetObject(@"firstLaunch") isEqualToString:@"OK"]) {
+//        WelcomeView *welView = [[WelcomeView alloc]initWithFrame:self.window.bounds];
+//        [self.window addSubview:welView];
+//    }
+    WelcomeView *welView = [[WelcomeView alloc]initWithFrame:self.window.bounds];
+    [self.window addSubview:welView];
     return YES;
 }
 
